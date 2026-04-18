@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Phishing Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .chat, .login, .result {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      display: none;
+    }
+
+    .chat.active, .login.active, .result.active {
+      display: block;
+    }
+
+    .msg {
+      background: #334155;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .link {
+      color: #38bdf8;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+      border-radius: 5px;
+      border: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #38bdf8;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .result {
+      text-align: center;
+      color: #f87171;
+    }
+  </style>
+</head>
+<body>
+
+<!-- CHAT -->
+<div class="chat active" id="chat">
+  <div class="msg"><strong>John:</strong> lol check it out this clip so funny 😂</div>
+  <div class="msg link" onclick="openLogin()">https://1nst@gram-video.com</div>
+</div>
+
+<!-- LOGIN PAGE -->
+<div class="login" id="login">
+  <h3>Instagram</h3>
+  <input type="text" placeholder="Username">
+  <input type="password" placeholder="Password">
+  <button onclick="hack()">Log In</button>
+</div>
+
+<!-- RESULT -->
+<div class="result" id="result">
+  <h2>(⊙_⊙;)</h2>
+  <p>Oops...</p>
+  <p><strong>Thank you for giving your password to the hacker!</strong></p>
+  <p>(￣▽￣;) Be more careful next time...</p>
+</div>
+
+<script>
+  function openLogin() {
+    document.getElementById("chat").classList.remove("active");
+    document.getElementById("login").classList.add("active");
+  }
+
+  function hack() {
+    document.getElementById("login").classList.remove("active");
+    document.getElementById("result").classList.add("active");
+  }
+</script>
+
+</body>
+</html>
